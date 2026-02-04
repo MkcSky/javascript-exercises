@@ -1,8 +1,17 @@
-const removeFromArray = function(arr, valueToRemove) {
-    itemIdex = arr.indexOf(valueToRemove);
-    arr.splice(itemIdex, 1)
-    return arr;
+const removeFromArray= function(arr, ...valueToRemove) {
+
+    for (let i = 0; i < arr.length; i++){
+        for (let val of valueToRemove){
+            ind = arr.indexOf(val)
+
+            if (ind !== -1){
+                arr.splice(ind,1)
+            }
+        }
+    }
+    return arr
 };
+
 
 
 
